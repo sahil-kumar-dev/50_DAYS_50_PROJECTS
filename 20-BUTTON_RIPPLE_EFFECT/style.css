@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.btn{
+    padding: 10px 15px;
+    background-color: purple;
+    border: 1px solid white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: white;
+    font-family: sans-serif;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle{
+    position: absolute;
+    display: block;
+    background-color: wheat;
+    height: 50px;
+    width: 50px;
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(0);
+    border-radius: 50%;
+    animation: scale 0.7s ease-in-out forwards;
+}
+
+@keyframes scale {
+    to{
+        transform:translate(-50%,-50%) scale(3);
+        opacity: 0;
+    }
+}

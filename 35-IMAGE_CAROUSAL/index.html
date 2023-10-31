@@ -1,0 +1,99 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Crousal</title>
+</head>
+<style>
+    .container {
+        width: 500px;
+        overflow: hidden;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        transform: translateX(0px);
+        transition: transform 0.5s ease-in-out;
+        border: 2px solid black;
+    }
+
+    .image-container img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .btn-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0px;
+    }
+
+    .btn{
+        padding: 6px 10px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        background-color: #ec5aec;
+        color: white;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="image-container">
+            <img src="/35- Image curousal/images/1.jpg" alt="">
+            <img src="/35- Image curousal/images/2.jpg" alt="">
+            <img src="/35- Image curousal/images/3.jpg" alt="">
+            <img src="/35- Image curousal/images/4.jpg" alt="">
+            <img src="/35- Image curousal/images/5.jpg" alt="">
+        </div>
+        <div class="btn-container">
+            <button class="btn" id="prev" onclick="prev()">Prev</button>
+            <button class="btn" id="next" onclick="next()">Next</button>
+        </div>
+    </div>
+    <script>
+        const images = document.querySelector('.image-container');
+        const img = document.querySelectorAll('img');
+
+        let idx = 0;
+
+        function change() {
+            idx++;
+            changeImage();
+        }
+
+        function changeImage() {
+            if (idx > img.length - 1) {
+                idx = 0;
+            } else if (idx < 0) {
+                idx = img.length - 1;
+            }
+            images.style.transform = `translateX(${-idx * 500}px)`;
+        }
+
+        let interval = setInterval(change, 2000);
+
+        function resetInterval() {
+            clearInterval(interval);
+            interval = setInterval(change, 2000);
+        }
+
+        function next() {
+            idx++;
+            changeImage();
+            resetInterval();
+        }
+        function prev() {
+            idx--;
+            changeImage();
+            resetInterval();
+        }
+    </script>
+</body>
+
+</html>

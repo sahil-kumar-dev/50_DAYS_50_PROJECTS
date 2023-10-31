@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-text-select:none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('https://products.ls.graphics/mesh-gradients/images/12.-Tumbleweed_1.jpg') center center/cover;
+    /* background: url('https://cdn.pixabay.com/photo/2020/05/07/04/01/digitization-5140071_1280.jpg') center center/cover; */
+    /* background: url('https://cdn.pixabay.com/photo/2016/07/23/10/48/binary-1536646_1280.jpg') center center/cover; */
+    /* background: url('https://cdn.pixabay.com/photo/2016/12/01/13/10/lightbulb-1875247_1280.jpg') center center/cover; */
+}
+
+.heading{
+    position: absolute;
+    top: 0;
+    margin-top: 2rem;
+    font-size: 3rem;
+    font-family: 'Merriweather';
+}
+
+.quiz-container {
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 0 10px black;
+    backdrop-filter: blur(8px);
+    backdrop-filter: blur(20px);
+    backdrop-filter: blur(8px);
+    max-width: 600px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.4);
+    font-family: 'Kanit';
+}
+
+.quiz {}
+
+.questionCount {
+    margin-bottom: 10px;
+    font-family: 'Cinzel';
+    font-weight: bold;
+}
+
+#questionLength {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#question {
+    font-family: 'Merriweather';
+    color: black;
+}
+
+.answers li {
+    font: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    margin: 15px 0;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    color: #413333;
+}
+
+input[type="radio"] {
+    appearance: none;
+    background-color: transparent;
+    background-color: white;
+    background-color: transparent;
+    position: relative;
+    margin: 0;
+    font: inherit;
+    width: 20px;
+    height: 20px;
+    border: 0.15em solid rgb(0, 0, 0);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"]::before {
+    content: "";
+    width: 0.65rem;
+    height: 0.65rem;
+    padding: 0px;
+    border-radius: 50%;
+    background-color: blue;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+}
+
+input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+.radio-btn~label {
+    cursor: pointer;
+    padding-left: 0.5rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 0.5rem 0;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    background-color: rgb(87, 199, 243);
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    outline: 2px solid rgb(0, 0, 0);
+    outline-offset: 3px;
+    transition: 0.1s linear;
+    text-transform: uppercase;
+    font-family: 'Merriweather';
+}
+.btn:active{
+    outline-offset: 0;
+}
+.btn:disabled{
+    background-color: rgb(84, 160, 170);
+    cursor: not-allowed;
+}
+
+@media screen and (max-width:468px) {
+    h2{
+        font-size: 1.2rem;
+    }
+    .answers li{
+        font-size: 1rem;
+    }
+}

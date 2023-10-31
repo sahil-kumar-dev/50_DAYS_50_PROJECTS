@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="output.css">
+    <title>Document</title>
+</head>
+<style>
+    /* *{
+        margin: 0;
+        padding: 0;
+        transition: all 0.3s;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        background-color: #46b2ff;
+        border-radius: 20px;
+        padding: 1rem;
+        width: 60%;
+    }
+    .review-container{
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        letter-spacing: 1.4px;
+        line-height: 1.3rem;
+        font-family: sans-serif;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details img{
+        border-radius: 50%;
+        border: 2px solid white;
+        margin-top: 1rem;
+    }
+    .details h3{
+        letter-spacing: 2px;
+        color: white;
+    }*/
+    .progress{
+        height: 2px;
+        background-color: white;
+        width: 0%;
+        animation: fill 7s infinite linear;
+    }
+    @keyframes fill {
+        to{
+            width: 96%;
+        }
+    } 
+</style>
+<body class="flex items-center justify-center bg-black">
+    <div class="border-2 border-solid border-white relative bg-blue-400 w-10/12 rounded-lg text-xs text-white p-3 md:w-1/2 md:flex md:py-8 font-mono md:h-[290px]">
+        <div class="progress my-2 md:absolute md:top-2"></div>
+        <div class="review-container my-2 md:w-8/12 md:text-base">
+            <p class="break-all review">At our IT company, I'm immersed in a world of cutting-edge technology. The collaborative atmosphere ignites creativity, allowing us to birth innovative solutions. Colleagues are supportive mentors, guiding me to explore uncharted territories. The dynamic projects challenge me and foster growth, nurturing a strong sense of purpose in my work. This environment is more than a workplace; it's a community where ideas flourish, pushing the boundaries of tech.</p>
+        </div>
+        <div class="details flex flex-col items-center justify-center md:w-4/12 md:pt-4">
+            <img src="https://randomuser.me/api/portraits/men/10.jpg" class="rounded-full aspect-square w-20 md:w-28">
+            <h3 class="name font-bold py-2 text-black md:text-lg">Alex W.</h3>
+            <h5 class="role font-semibold tracking-wider m-0 text-blue-800 md:text-base">Front-End</h5>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
