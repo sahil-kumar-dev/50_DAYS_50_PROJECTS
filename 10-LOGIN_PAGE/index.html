@@ -1,54 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
 	<title>Document</title>
 </head>
 <style>
-	*{
+	* {
 		margin: 0;
 		padding: 0;
 		box-sizing: border-box;
 	}
-	.container{
+
+	.container {
 		display: flex;
 		width: 100%;
 		height: 100vh;
 		position: relative;
+		overflow: hidden;
+		/* background-color: red; */
+		font-family: 'Poppins';
 	}
-	.background{
-		background-color: orange;
+
+	.background {
+		background:linear-gradient(to right,#ff5900,#ff5900) ;
 		height: 100vh;
 		width: 50%;
 		position: absolute;
 		z-index: -100;
 		left: 0%;
+		transition: 0.6s ease-in;
 	}
-	.left,.right{
+
+	.left-50 {
+		left: 50%;
+		background:linear-gradient(180deg,#ff5900,rgb(255, 0, 0));
+	}
+
+
+	.left,
+	.right {
 		width: 50%;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 80px;
+		text-align: center;
+	}
+
+	.content-signIn,
+	.content-signUp {
+		position: absolute;
+		transition: 0.3s linear 0.1s;
+		padding: 80px;
+	}
+
+	.content-signUp {
+		right: -150%;
+		opacity: 0;
+	}
+
+	.content-signIn {
+		left: 0%;
+	}
+
+	.content-signIn h1,
+	.content-signUp h1 {
+		color: white;
+		font-size: 4rem;
+	}
+
+	.content-signIn p,
+	.content-signUp p {
+		color: white;
+		margin: 30px 0;
+	}
+
+	.btn {
+		background-color: transparent;
+		padding: 10px 80px;
+		border: 2px solid white;
+		border-radius: 30px;
+		font-size: 1.3rem;
+		color: white;
+		font-weight: bold;
+	}
+
+	.right-0 {
+		right: 0%;
+		opacity: 1;
+	}
+
+	.left-150 {
+		left: -150%;
+		opacity: 0;
 	}
 </style>
+
 <body>
 	<div class="container">
 		<div class="left">
-			<div class="content">
+			<div class="content-signIn">
 				<h1>Welcome Back</h1>
-				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima libero culpa vero debitis minus rem sunt totam perspiciatis impedit dolorem!</p>
-				<button>Sign In</button>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima libero culpa vero debitis minus rem
+					sunt totam perspiciatis impedit dolorem</p>
+				<button class="signin-btn btn">Sign In</button>
 			</div>
 		</div>
 		<div class="right">
-			<div class="content">
-				<h1>Welcome Back</h1>
-				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima libero culpa vero debitis minus rem sunt totam perspiciatis impedit dolorem!</p>
-				<button>Sign In</button>
+			<div class="content-signUp">
+				<h1>Hello, friend</h1>
+				<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima libero culpa vero debitis minus rem
+					sunt totam perspiciatis impedit !</p>
+				<button class="signup-btn btn">Sign Up</button>
 			</div>
+			hello
 		</div>
 		<div class="background"></div>
 	</div>
 	<script>
+		const signUp = document.querySelector('.signup-btn')
+		const signIn = document.querySelector('.signin-btn')
+		const background = document.querySelector('.background')
+		const contentSignUp = document.querySelector('.content-signUp')
+		const contentSignIn = document.querySelector('.content-signIn')
 
+
+		signIn.addEventListener('click', () => {
+			background.classList.add('left-50')
+			contentSignUp.classList.add('right-0')
+			contentSignIn.classList.add('left-150')
+		})
+
+		signUp.addEventListener('click', () => {
+			background.classList.remove('left-50')
+			contentSignUp.classList.remove('right-0')
+			contentSignIn.classList.remove('left-150')
+		})
 	</script>
 </body>
+
 </html>
